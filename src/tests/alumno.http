@@ -1,0 +1,44 @@
+GET http://localhost:3001/alumnos
+########
+
+POST http://localhost:3001/alumnos/
+Content-Type: application/json
+
+{
+    "nombre": "Progra Web",
+    "nivel": 5,
+    "carrera": "Sistemas",
+    "idDocente": 1
+  }
+###
+
+PUT http://localhost:3001/alumnos/
+Content-Type: application/json
+
+  {
+    "id": 3,
+    "nombre": "Programacion Web",
+    "nivel": 5,
+    "carrera": "Sistemas2",
+    "idDocente": 1
+  }
+
+###
+
+GET http://localhost:3001/alumnos/2
+###
+
+DELETE http://localhost:3001/alumnos/3
+
+########
+
+POST http://localhost:3001/alumnos/
+Content-Type: application/json
+
+{
+    "id": 7,
+    "nombre": "Gestion de Proyectos",
+    "nivel": 5,
+    "carrera": "Sistemas",
+    "idDocente": 2
+  }
