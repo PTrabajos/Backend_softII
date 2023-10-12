@@ -1,8 +1,8 @@
-import Persona from '../models/persona.js'
+import Order_detail from '../models/order_detail.js'
 
 const findAll = async () => {
     try {
-        const result = await Persona.findAll();
+        const result = await Order_detail.findAll();
         console.log(result)
         return result;
 
@@ -13,12 +13,12 @@ const findAll = async () => {
     }
 }
 
-const create = async (persona) => {
+const create = async (ordetail) => {
     try {
 
-        const newPersona = await Persona.create(persona);
+        const newOrder_detail = await Order_detail.create(ordetail);
 
-        return newPersona;
+        return newOrder_detail;
 
     } catch(err) {
         console.error(err)
@@ -29,7 +29,7 @@ const create = async (persona) => {
 
 const findOne = async (id) => {
     try {
-        return await Persona.findOne({
+        return await Order_detail.findOne({
             where: {
                 id
             }
@@ -41,19 +41,19 @@ const findOne = async (id) => {
     }
 }
 
-const update = async (persona) => {
+const update = async (ordetail) => {
     try {
-        const foundPersona =  await Persona.findOne({
+        const foundOrder_detail =  await Order_detail.findOne({
             where: {
-                id: alumno.id
+                id: orden.id
             }
         })
 
-        foundPersona.set(alumno)
+        foundOrder_detail.set(ordetail)
 
-        foundPersona.save()
+        foundOrder_detail.save()
 
-        return foundPersona;
+        return foundOrder_detail;
 
     }
     catch(err) {
@@ -64,7 +64,7 @@ const update = async (persona) => {
 
 const remove = async (id) => {
     try {
-        await Persona.destroy({
+        await Order_detail.destroy({
             where: {
                 id
             }
@@ -80,6 +80,6 @@ const remove = async (id) => {
 }
 
 
-const PersonaRepository = { findAll, create, findOne,update, remove };
+const Order_detailRepository = { findAll, create, findOne,update, remove };
 
-export default PersonaRepository; 
+export default UniversidadRepository; 

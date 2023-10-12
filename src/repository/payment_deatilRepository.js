@@ -1,8 +1,8 @@
-import Cita from '../models/cita.js'
+import Payment_detail from '../models/payment_detail.js'
 
 const findAll = async () => {
     try {
-        const result = await Cita.findAll();
+        const result = await Payment_detail.findAll();
         console.log(result)
         return result;
 
@@ -13,12 +13,12 @@ const findAll = async () => {
     }
 }
 
-const create = async (cita) => {
+const create = async (payment_detail) => {
     try {
 
-        const newCita = await Cita.create(cita);
+        const newPayment_detail = await Payment_detail.create(payment_detail);
 
-        return newCita;
+        return newPayment_detail;
 
     } catch(err) {
         console.error(err)
@@ -29,7 +29,7 @@ const create = async (cita) => {
 
 const findOne = async (id) => {
     try {
-        return await Cita.findOne({
+        return await Payment_detail.findOne({
             where: {
                 id
             }
@@ -41,19 +41,19 @@ const findOne = async (id) => {
     }
 }
 
-const update = async (cita) => {
+const update = async (payment_detail) => {
     try {
-        const foundCita =  await Cita.findOne({
+        const foundPayment_detail =  await Payment_detail.findOne({
             where: {
-                id: alumno.id
+                id: payment.id
             }
         })
 
-        foundCita.set(cita)
+        foundPayment_detail.set(payment)
 
-        foundCita.save()
+        foundPayment_detail.save()
 
-        return foundCita;
+        return foundPayment_detail;
 
     }
     catch(err) {
@@ -64,7 +64,7 @@ const update = async (cita) => {
 
 const remove = async (id) => {
     try {
-        await Cita.destroy({
+        await Payment_detail.destroy({
             where: {
                 id
             }
@@ -80,6 +80,6 @@ const remove = async (id) => {
 }
 
 
-const CitaRepository = { findAll, create, findOne,update, remove };
+const Payment_detailRepository = { findAll, create, findOne,update, remove };
 
-export default CitaRepository; 
+export default Payment_detailRepository; 

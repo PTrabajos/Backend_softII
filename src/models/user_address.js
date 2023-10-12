@@ -8,37 +8,41 @@
   }*/
 import { DATE, DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
-import Cita from "./cita.js"
+import User from "./user.js"
 
-const Calificacion = sequelize.define('calificacion', {
-    idCalificacion: {
-        type: DataTypes.INTEGER,
+const User_address = sequelize.define('user_address', {
+    uaddress_id: {
+        type: DataTypes.STRING(10), // 10 caracteres (maximo
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    idCita: {
-        type: DataTypes.INTEGER
+    user_id: {
+        type: DataTypes.STRING(10)
     },
-    
-    Calificacion: {
-        type: DataTypes.INTEGER
+    adrress: {
+        type: DataTypes.STRING(35)
     },
-    
-    comentario:{
-        type: DataTypes.STRING
+    city: {
+        type: DataTypes.STRING(25)
+    },
+    postal_code: {
+        type: DataTypes.STRING(15)
+    },
+    country: {
+        type: DataTypes.STRING(20)
     }
-
 })
 
-Calificacion.belongsTo(Cita, {
-    foreignKey: 'idUniversidad',
+
+User_address.belongsTo(User, {
+    foreignKey: 'user_id',
     targetId: 'id'
 })
 
-Cita.hasMany(Calificacion, {
-    foreignKey: 'idUniversidad',
+User.hasMany(User_address, {
+    foreignKey: 'user_id',
     targetId: 'id'
 })
 
-export default Calificacion
+export default User_address

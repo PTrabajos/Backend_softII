@@ -1,8 +1,8 @@
-import Universidad from '../models/Universidad.js'
+import Product from '../models/product.js'
 
 const findAll = async () => {
     try {
-        const result = await Universidad.findAll();
+        const result = await Product.findAll();
         console.log(result)
         return result;
 
@@ -13,12 +13,12 @@ const findAll = async () => {
     }
 }
 
-const create = async (universidad) => {
+const create = async (product) => {
     try {
 
-        const newUniversidad = await Universidad.create(universidad);
+        const newProduct = await Product.create(product);
 
-        return newUniversidad;
+        return newProduct;
 
     } catch(err) {
         console.error(err)
@@ -29,7 +29,7 @@ const create = async (universidad) => {
 
 const findOne = async (id) => {
     try {
-        return await Universidad.findOne({
+        return await Product.findOne({
             where: {
                 id
             }
@@ -41,19 +41,19 @@ const findOne = async (id) => {
     }
 }
 
-const update = async (universidad) => {
+const update = async (product) => {
     try {
-        const foundUniversidad =  await Universidad.findOne({
+        const foundProduct =  await Product.findOne({
             where: {
-                id: alumno.id
+                id: product.id
             }
         })
 
-        foundUniversidad.set(universidad)
+        foundProduct.set(product)
 
-        foundUniversidad.save()
+        foundProduct.save()
 
-        return foundUniversidad;
+        return foundProduct;
 
     }
     catch(err) {
@@ -64,7 +64,7 @@ const update = async (universidad) => {
 
 const remove = async (id) => {
     try {
-        await Universidad.destroy({
+        await Product.destroy({
             where: {
                 id
             }
@@ -80,6 +80,6 @@ const remove = async (id) => {
 }
 
 
-const UniversidadRepository = { findAll, create, findOne,update, remove };
+const ProductRepository = { findAll, create, findOne,update, remove };
 
-export default UniversidadRepository; 
+export default ProductRepository; 

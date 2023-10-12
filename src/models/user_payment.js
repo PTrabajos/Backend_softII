@@ -8,20 +8,41 @@
   }*/
 import { DATE, DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
+import User from "./user.js"
 
-const Rol = sequelize.define('roles', {
-    idRol: {
-        type: DataTypes.INTEGER,
+const User_payment = sequelize.define('user_payment', {
+    userpay_id: {
+        type: DataTypes.STRING(10),
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    rol: {
+    user_id: {
+        type: DataTypes.STRING(10)
+    },
+    payment_type: {
+        type: DataTypes.STRING 
+    },
+    provider: {
         type: DataTypes.STRING
     },
+    account_no: {
+        type: DataTypes.INTEGER
+    },
+    expiry:{
+        type: DataTypes.DATE
+    }
+
 })
 
+User_payment.belongsTo(User, {
+    foreignKey: 'user_id',
+    targetId: 'id'
+})
 
+User.hasMany(User_payment, {
+    foreignKey: 'user_id',
+    targetId: 'id'
+})
 
-
-export default Rol
+export default User_payment
