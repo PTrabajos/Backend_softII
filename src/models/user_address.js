@@ -12,13 +12,13 @@ import User from "./user.js"
 
 const User_address = sequelize.define('user_address', {
     uaddress_id: {
-        type: DataTypes.STRING(10), // 10 caracteres (maximo
+        type: DataTypes.INTEGER, // 10 caracteres (maximo
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
     user_id: {
-        type: DataTypes.STRING(10)
+        type: DataTypes.INTEGER
     },
     adrress: {
         type: DataTypes.STRING(35)

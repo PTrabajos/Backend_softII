@@ -1,27 +1,27 @@
-import PersonaRepository from "../repository/personaRepository.js";
+import Order_itemsRepository from "../repository/order_itemsRepository.js";
 
 const findAll = async (req, res) => {
-    const result = await PersonaRepository.findAll();
+    const result = await Order_itemsRepository.findAll();
 
     return sendResponse(result, res);
 }
 
 const findOne = async (req, res) => {
     const id = req.params.id;
-    const result = await PersonaRepository.findOne(id);
+    const result = await Order_itemsRepository.findOne(id);
 
     return sendResponse(result, res);
 }
 
 const create = async (req, res) => {
     
-    const result = await PersonaRepository.create(req.body);
+    const result = await Order_itemsRepository.create(req.body);
 
     return sendResponse(result, res);
 }
 
 const update = async (req,res) => {
-    const result = await PersonaRepository.update(req.body)
+    const result = await Order_itemsRepository.update(req.body)
 
     return sendResponse(result, res);
 }
@@ -30,7 +30,7 @@ const remove = async (req, res) => {
 
     const id = req.params.id;
 
-    const result = await PersonaRepository.remove(id)
+    const result = await Order_itemsRepository.remove(id)
 
     return sendResponse(result, res);
 }
@@ -42,6 +42,6 @@ const sendResponse = (result, res) => {
         return res.status(500).json({ message: 'Ha ocurrido un error'})
 } 
 
-const PersonaController = { findAll, create, findOne, update, remove }
+const Order_itemController = { findAll, create, findOne, update, remove }
 
-export default PersonaController;
+export default Order_itemController;

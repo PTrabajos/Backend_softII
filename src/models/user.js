@@ -5,7 +5,7 @@ import Doc from "./doc_type.js"
 
 const User = sequelize.define('user', {
     id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
@@ -19,7 +19,7 @@ const User = sequelize.define('user', {
     }
     ,
     doc_id: {
-        type: DataTypes.STRING
+        type: DataTypes.INTEGER
     }
 })
 

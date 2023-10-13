@@ -1,13 +1,12 @@
 import express from 'express'
-import PersonaController from '../controllers/personaController.js';
+import order_itemsController from '../controllers/order_itemsController.js';
 
-const { findAll, create, update, remove, findOne } = PersonaController
+const { findAll, create, remove, findOne } = order_itemsController
 
 const router = express.Router()
 
 router.get("/", findAll)
 router.post("/", create)
-router.put("/", update)
 router.delete("/:id", remove)
 router.get("/:id", findOne)
 

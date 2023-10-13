@@ -1,7 +1,7 @@
 import express from 'express'
-import CitaController from '../controllers/citaController.js';
+import ProductController from '../controllers/productController.js';
 
-const { findAll, create, update, remove, findOne } = CitaController
+const { findAll, create, update, remove, findOne } = ProductController
 
 const router = express.Router()
 

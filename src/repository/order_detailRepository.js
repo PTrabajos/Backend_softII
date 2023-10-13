@@ -82,4 +82,4 @@ const remove = async (id) => {
 
 const Order_detailRepository = { findAll, create, findOne,update, remove };
 
-export default UniversidadRepository; 
+export default Order_detailRepository; 

@@ -1,13 +1,12 @@
 import express from 'express'
-import UniversidadController from '../controllers/universidadController.js';
+import MeasureController from '../controllers/measureController.js';
 
-const { findAll, create, update, remove, findOne } = UniversidadController
+const { findAll, create, remove, findOne } = MeasureController
 
 const router = express.Router()
 
 router.get("/", findAll)
 router.post("/", create)
-router.put("/", update)
 router.delete("/:id", remove)
 router.get("/:id", findOne)
 

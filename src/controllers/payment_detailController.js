@@ -1,27 +1,27 @@
-import UniversidadRepository from "../repository/universidadRepository.js";
+import Payment_detailRepository from "../repository/payment_deatilRepository.js";
 
 const findAll = async (req, res) => {
-    const result = await UniversidadRepository.findAll();
+    const result = await Payment_detailRepository.findAll();
 
     return sendResponse(result, res);
 }
 
 const findOne = async (req, res) => {
     const id = req.params.id;
-    const result = await UniversidadRepository.findOne(id);
+    const result = await Payment_detailRepository.findOne(id);
 
     return sendResponse(result, res);
 }
 
 const create = async (req, res) => {
     
-    const result = await UniversidadRepository.create(req.body);
+    const result = await Payment_detailRepository.create(req.body);
 
     return sendResponse(result, res);
 }
 
 const update = async (req,res) => {
-    const result = await UniversidadRepository.update(req.body)
+    const result = await Payment_detailRepository.update(req.body)
 
     return sendResponse(result, res);
 }
@@ -30,7 +30,7 @@ const remove = async (req, res) => {
 
     const id = req.params.id;
 
-    const result = await UniversidadRepository.remove(id)
+    const result = await Payment_detailRepository.remove(id)
 
     return sendResponse(result, res);
 }
@@ -42,6 +42,6 @@ const sendResponse = (result, res) => {
         return res.status(500).json({ message: 'Ha ocurrido un error'})
 } 
 
-const UniversidadController = { findAll, create, findOne, update, remove }
+const Payment_detailController = { findAll, create, findOne, update, remove }
 
-export default UniversidadController;
+export default Payment_detailController;

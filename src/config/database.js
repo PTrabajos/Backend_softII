@@ -5,7 +5,7 @@ dotenv.config()
 
 const hostname = process.env.HOSTNAME || '127.0.0.1'
 const username = process.env.BDUSER || 'testchatbot_adminsoft2'
-const password = process.env.PASSWORD || '123'
+const password = process.env.PASSWORD || 'Adminsoft2'
 const database = process.env.DATABASE || 'testchatbot_soft2db'
 const port = process.env.DBPORT || 5432
 const dialect = process.env.DIALECT || 'postgres'

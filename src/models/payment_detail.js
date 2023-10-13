@@ -11,7 +11,7 @@
   
   const Payment_detail = sequelize.define('payment_detail', {
       payment_id: {
-          type: DataTypes.STRING(10), // 10 caracteres (maximo
+          type: DataTypes.INTEGER, // 10 caracteres (maximo
           primaryKey: true,
           autoIncrement: true,
           allowNull: false

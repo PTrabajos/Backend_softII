@@ -12,13 +12,13 @@ import User from "./user.js"
 
 const User_payment = sequelize.define('user_payment', {
     userpay_id: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
     user_id: {
-        type: DataTypes.STRING(10)
+        type: DataTypes.INTEGER
     },
     payment_type: {
         type: DataTypes.STRING 

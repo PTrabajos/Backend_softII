@@ -14,22 +14,22 @@
 
   const Order_items = sequelize.define('order_items', {
       oritems_id: {
-          type: DataTypes.STRING(10), // 10 caracteres (maximo
+          type: DataTypes.INTEGER, // 10 caracteres (maximo
           primaryKey: true,
           autoIncrement: true,
           allowNull: false
       },
       order_id: {
-          type: DataTypes.STRING(10)
+          type: DataTypes.INTEGER
       },
       product_id: {
-          type: DataTypes.STRING(10)
+          type: DataTypes.INTEGER
       },
       cuantity: {
           type: DataTypes.DOUBLE
       },
       measure_id: {
-          type: DataTypes.STRING(10)
+          type: DataTypes.INTEGER
       },
   })
   

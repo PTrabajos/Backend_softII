@@ -60,6 +60,6 @@ const remove = async (id) => {
 }
 
 
-const MeasureRepository = { findAll, create, findOne,update, remove };
+const MeasureRepository = { findAll, create, findOne, remove };
 
 export default MeasureRepository; 

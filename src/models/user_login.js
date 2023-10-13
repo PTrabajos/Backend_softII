@@ -4,13 +4,13 @@
   
   const User_login= sequelize.define('user_login', {
       ulogin_id: {
-          type: DataTypes.STRING(10), // 10 caracteres (maximo
+          type: DataTypes.INTEGER, // 10 caracteres (maximo
           primaryKey: true,
           autoIncrement: true,
           allowNull: false
       },
       user_id: {
-          type: DataTypes.STRING(10)
+          type: DataTypes.INTEGER
       },
       username: {
           type: DataTypes.STRING(35)

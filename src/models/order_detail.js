@@ -13,16 +13,16 @@
 
   const Order_detail = sequelize.define('order_detail', {
       ordetail_id: {
-          type: DataTypes.STRING(10), // 10 caracteres (maximo
+          type: DataTypes.INTEGER, // 10 caracteres (maximo
           primaryKey: true,
           autoIncrement: true,
           allowNull: false
       },
       user_id: {
-          type: DataTypes.STRING(10)
+          type: DataTypes.INTEGER
       },
       payment_id: {
-          type: DataTypes.STRING(10)
+          type: DataTypes.INTEGER
       },
       total: {
           type: DataTypes.FLOAT
