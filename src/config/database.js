@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const hostname = process.env.HOSTNAME || '127.0.0.1'
+const hostname = process.env.HOSTNAME || 'localhost'
 const username = process.env.BDUSER || 'testchatbot_adminsoft2'
 const password = process.env.PASSWORD || 'Adminsoft2'
 const database = process.env.DATABASE || 'testchatbot_soft2db'

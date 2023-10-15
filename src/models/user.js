@@ -21,6 +21,13 @@ const User = sequelize.define('user', {
     doc_id: {
         type: DataTypes.INTEGER
     }
+    ,
+    telephone: {
+        type: DataTypes.STRING
+    },
+    email: {
+        type: DataTypes.STRING
+    }
 })
 
 User.belongsTo(Doc, {
