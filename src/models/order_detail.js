@@ -27,6 +27,9 @@
       titulo: {
         type: DataTypes.STRING
       },
+      direccion: {
+        type: DataTypes.STRING
+      },
       descripcion: {
         type: DataTypes.STRING
       },
