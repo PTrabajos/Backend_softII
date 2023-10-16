@@ -24,8 +24,14 @@
       payment_id: {
           type: DataTypes.INTEGER
       },
-      total: {
-          type: DataTypes.FLOAT
+      titulo: {
+        type: DataTypes.STRING
+      },
+      descripcion: {
+        type: DataTypes.STRING
+      },
+      fecha_entrega: {
+          type: DataTypes.DATE
       }
   })
   

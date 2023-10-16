@@ -4,9 +4,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const hostname = process.env.HOSTNAME || 'localhost'
-const username = process.env.BDUSER || 'testchatbot_adminsoft2'
-const password = process.env.PASSWORD || 'Adminsoft2'
-const database = process.env.DATABASE || 'testchatbot_soft2db'
+const username = process.env.BDUSER || 'postgres'
+const password = process.env.PASSWORD || 'lionelmessi1029'
+const database = process.env.DATABASE || 'soft2'
 const port = process.env.DBPORT || 5432
 const dialect = process.env.DIALECT || 'postgres'
 
