@@ -5,7 +5,7 @@ dotenv.config()
 
 const hostname = process.env.HOSTNAME || 'localhost'
 const username = process.env.BDUSER || 'postgres'
-const password = process.env.PASSWORD || 'lionelmessi1029'
+const password = process.env.PASSWORD || 'admin'
 const database = process.env.DATABASE || 'soft2'
 const port = process.env.DBPORT || 5432
 const dialect = process.env.DIALECT || 'postgres'

@@ -27,14 +27,14 @@
       titulo: {
         type: DataTypes.STRING
       },
-      direccion: {
-        type: DataTypes.STRING
-      },
       descripcion: {
         type: DataTypes.STRING
       },
       fecha_entrega: {
           type: DataTypes.DATE
+      },
+      direccion: {
+        type: DataTypes.STRING
       }
   })
   
