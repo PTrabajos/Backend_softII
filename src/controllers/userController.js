@@ -1,4 +1,4 @@
-import UserRepository from "../repository/productRepository.js";
+import UserRepository from "../repository/userRepository.js";
 
 const findAll = async (req, res) => {
     const result = await UserRepository.findAll();

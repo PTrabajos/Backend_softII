@@ -2,7 +2,7 @@ import User from '../models/user.js'
 
 const findAll = async () => {
     try {
-        const result = await Product.findAll();
+        const result = await User.findAll();
         console.log(result)
         return result;
 
@@ -16,7 +16,7 @@ const findAll = async () => {
 const create = async (user) => {
     try {
 
-        const newUser = await User.create(product);
+        const newUser = await User.create(user);
 
         return newUser;
 

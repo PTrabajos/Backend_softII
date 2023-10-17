@@ -31,6 +31,9 @@
       measure_id: {
           type: DataTypes.INTEGER
       },
+      price: {
+        type: DataTypes.DOUBLE
+      },
   })
   
   Order_items.belongsTo(order_detail, {

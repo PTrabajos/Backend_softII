@@ -22,11 +22,22 @@ const User = sequelize.define('user', {
         type: DataTypes.INTEGER
     }
     ,
+    doc_no: {
+        type: DataTypes.STRING
+    },
     telephone: {
         type: DataTypes.STRING
     },
     email: {
         type: DataTypes.STRING
+    }
+    ,
+    password: {
+        type: DataTypes.STRING
+    }
+    ,
+    profileImage: {
+        type: DataTypes.TEXT
     }
 })
 
