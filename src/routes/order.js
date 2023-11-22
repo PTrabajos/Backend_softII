@@ -1,7 +1,7 @@
 import express from 'express'
-import order_itemsController from '../controllers/order_itemsController.js';
+import OrderController from '../controllers/orderController.js'
 
-const { findAll, create, remove, findOne } = order_itemsController
+const { findAll, create, remove, findOne } = OrderController
 
 const router = express.Router()
 

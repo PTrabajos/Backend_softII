@@ -1,15 +1,15 @@
-import Order_detail from '../models/order_detail.js'
+import Order from '../models/order.js'
 import User from '../models/user.js';
 
 const findAll = async () => {
     try {
-        const result = await Order_detail.findAll({
+        const result = await Order.findAll({
             include: [
                 {
                     model: User, // Modelo que deseas unir
                     required: true, // INNER JOIN
-                    as: 'user', // Alias de la relación, si lo tienes definido
-                    attributes: ['first_name', 'last_name', 'profileImage']
+                    as: 'User', // Alias de la relación, si lo tienes definido
+                    attributes: ['FIRST_NAME', 'LAST_NAME', 'PROFILE_IMAGE']
                 }
             ],
             //raw: true,
@@ -17,7 +17,7 @@ const findAll = async () => {
 
         console.log(result);
         return result;
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         return null;
     }
@@ -26,11 +26,11 @@ const findAll = async () => {
 const create = async (ordetail) => {
     try {
 
-        const newOrder_detail = await Order_detail.create(ordetail);
+        const newOrder = await Order.create(ordetail);
 
-        return newOrder_detail;
+        return newOrder;
 
-    } catch(err) {
+    } catch (err) {
         console.error(err)
 
         return null;
@@ -39,13 +39,13 @@ const create = async (ordetail) => {
 
 const findOne = async (id) => {
     try {
-        return await Order_detail.findOne({
+        return await Order.findOne({
             where: {
                 id
             }
         })
     }
-    catch(err) {
+    catch (err) {
         console.error(err)
         return null;
     }
@@ -53,20 +53,20 @@ const findOne = async (id) => {
 
 const update = async (ordetail) => {
     try {
-        const foundOrder_detail =  await Order_detail.findOne({
+        const foundOrder = await Order.findOne({
             where: {
-                id: orden.id
+                id
             }
         })
 
-        foundOrder_detail.set(ordetail)
+        foundOrder.set(ordetail)
 
-        foundOrder_detail.save()
+        foundOrder.save()
 
-        return foundOrder_detail;
+        return foundOrder;
 
     }
-    catch(err) {
+    catch (err) {
         console.error(err)
         return null;
     }
@@ -74,7 +74,7 @@ const update = async (ordetail) => {
 
 const remove = async (id) => {
     try {
-        await Order_detail.destroy({
+        await Order.destroy({
             where: {
                 id
             }
@@ -82,14 +82,14 @@ const remove = async (id) => {
 
         return true;
     }
-    catch(err) {
+    catch (err) {
         console.error(err)
         return null;
-    }        
+    }
 
 }
 
 
-const Order_detailRepository = { findAll, create, findOne,update, remove };
+const OrderRepository = { findAll, create, findOne, update, remove };
 
-export default Order_detailRepository; 
+export default OrderRepository; 

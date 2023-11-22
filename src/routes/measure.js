@@ -1,13 +1,15 @@
 import express from 'express'
-import MeasureController from '../controllers/measureController.js';
 
-const { findAll, create, remove, findOne } = MeasureController
+import ControllerFactory from '../controllers/MeasureControllerFactory.js';
+
+const controllerFactory = new ControllerFactory()
+const controller = controllerFactory.createController()
 
 const router = express.Router()
 
-router.get("/", findAll)
-router.post("/", create)
-router.delete("/:id", remove)
-router.get("/:id", findOne)
+router.get("/", controller.findAll)
+router.post("/", controller.create)
+router.delete("/:id", controller.remove)
+router.get("/:id", controller.findOne)
 
 export default router;

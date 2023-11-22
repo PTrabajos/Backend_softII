@@ -1,6 +1,6 @@
 import express from 'express'
 
-import ControllerFactory from '../controllers/UserControllerFactory.js';
+import ControllerFactory from '../controllers/DocTypeControllerFactory.js';
 
 const controllerFactory = new ControllerFactory()
 const controller = controllerFactory.createController()

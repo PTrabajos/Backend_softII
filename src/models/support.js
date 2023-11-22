@@ -1,9 +1,9 @@
 import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
-import DocType from "./doc_type.js"
+import ProblemType from "./problem_type.js"
 
-const User = sequelize.define('User', {
-    ID_USER: {
+const Support = sequelize.define('Support', {
+    ID_SUPPORT: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -17,33 +17,22 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING
     }
     ,
-    FK_ID_DOC_TYPE: {
+    FK_ID_PROBLEM_TYPE: {
         type: DataTypes.INTEGER
     }
     ,
-    NO_DOC: {
+    DESCRIPTION: {
         type: DataTypes.STRING
     },
-    TELEPHONE: {
+    FG_PRESENTIAL: {
         type: DataTypes.STRING
     },
-    EMAIL: {
-        type: DataTypes.STRING
-    }
-    ,
-    PASSWORD: {
-        type: DataTypes.STRING
-    }
-    ,
-    PROFILE_IMAGE: {
-        type: DataTypes.TEXT
-    }
 }, {
-    tableName: 'USER'
+    tableName: 'SUPPORT'
 })
 
-User.belongsTo(DocType, {
-    foreignKey: 'FK_ID_DOC_TYPE',
+Support.belongsTo(ProblemType, {
+    foreignKey: 'FK_ID_PROBLEM_TYPE',
 })
 
-export default User
+export default Support

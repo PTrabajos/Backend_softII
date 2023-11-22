@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
-const Measure = sequelize.define('Measure', {
-    ID_MEASURE: {
+const ProblemType = sequelize.define('ProblemType', {
+    ID_PROBLEM_TYPE: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -12,7 +12,7 @@ const Measure = sequelize.define('Measure', {
         type: DataTypes.STRING(50)
     }
 }, {
-    tableName: 'MEASURE'
+    tableName: 'PROBLEM_TYPE'
 })
 
-export default Measure
+export default ProblemType
