@@ -23,6 +23,9 @@ const Order = sequelize.define('Order', {
     },
     ADDRESS: {
         type: DataTypes.STRING
+    },
+    FG_STATE: {
+        type: DataTypes.STRING
     }
 }, {
     tableName: 'ORDER'

@@ -24,10 +24,10 @@ class BaseRepository {
         }
     }
 
-    findOne = async (id) => {
+    findOne = async (ID_USER) => {
         try {
             return await this.modelo.findOne({
-                where: { id }
+                where: { ID_USER }
             })
         }
         catch(err) {
@@ -37,9 +37,9 @@ class BaseRepository {
     }
 
     update =  async(object) => {
-        const { id } = object;
+        const { ID_USER } = object;
         try {
-            const result = await this.modelo.update({ where: { id } })
+            const result = await this.modelo.update({ where: { ID_USER } })
     
             if (result) {
                 result.set(object)

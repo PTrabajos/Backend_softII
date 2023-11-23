@@ -37,11 +37,11 @@ const create = async (ordetail) => {
     }
 }
 
-const findOne = async (id) => {
+const findOne = async (ID_ORDER) => {
     try {
         return await Order.findOne({
             where: {
-                id
+                ID_ORDER
             }
         })
     }
@@ -55,7 +55,7 @@ const update = async (ordetail) => {
     try {
         const foundOrder = await Order.findOne({
             where: {
-                id
+                ID_ORDER
             }
         })
 
@@ -72,11 +72,11 @@ const update = async (ordetail) => {
     }
 }
 
-const remove = async (id) => {
+const remove = async (ID_ORDER) => {
     try {
         await Order.destroy({
             where: {
-                id
+                ID_ORDER
             }
         })
 
