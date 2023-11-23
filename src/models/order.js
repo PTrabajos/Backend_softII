@@ -3,28 +3,28 @@ import sequelize from '../config/database.js'
 import User from "./user.js"
 
 const Order = sequelize.define('Order', {
-    ID_ORDER: {
+    idOrder: {
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FK_ID_USER: {
+    idUser: {
         type: DataTypes.INTEGER
     },
-    TITLE: {
+    title: {
         type: DataTypes.STRING
     },
-    DESCRIPTION: {
+    description: {
         type: DataTypes.STRING
     },
-    DELIVERY_DATE: {
+    deliveryDate: {
         type: DataTypes.DATE
     },
-    ADDRESS: {
+    address: {
         type: DataTypes.STRING
     },
-    FG_STATE: {
+    fgState: {
         type: DataTypes.STRING
     }
 }, {
@@ -32,7 +32,7 @@ const Order = sequelize.define('Order', {
 })
 
 Order.belongsTo(User, {
-    foreignKey: 'FK_ID_USER',
+    foreignKey: 'idUser',
 })
 
 export default Order

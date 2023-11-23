@@ -5,25 +5,25 @@ import Product from "./product.js"
 import Measure from "./measure.js"
 
 const OrderItem = sequelize.define('OrderItem', {
-    ID_ORDER_ITEM: {
+    idOrderItem: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FK_ID_ORDER: {
+    idOrder: {
         type: DataTypes.INTEGER
     },
-    FK_ID_PRODUCT: {
+    idProduct: {
         type: DataTypes.INTEGER
     },
-    AMMOUNT: {
+    ammount: {
         type: DataTypes.DOUBLE
     },
-    FK_ID_MEASURE: {
+    idMeasure: {
         type: DataTypes.INTEGER
     },
-    PRICE: {
+    price: {
         type: DataTypes.DOUBLE
     },
 }, {
@@ -31,18 +31,18 @@ const OrderItem = sequelize.define('OrderItem', {
 })
 
 OrderItem.belongsTo(Order, {
-    foreignKey: 'FK_ID_ORDER',
-    targetId: 'ID_ORDER'
+    foreignKey: 'idOrder',
+    targetId: 'idOrder'
 })
 
 OrderItem.belongsTo(Product, {
-    foreignKey: 'FK_ID_PRODUCT',
-    targetId: 'ID_PRODUCT'
+    foreignKey: 'idProduct',
+    targetId: 'idProduct'
 })
 
 OrderItem.belongsTo(Measure, {
-    foreignKey: 'FK_ID_MEASURE',
-    targetId: 'ID_MEASURE'
+    foreignKey: 'idMeasure',
+    targetId: 'idMeasure'
 })
 
 export default OrderItem

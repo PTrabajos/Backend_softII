@@ -2,13 +2,13 @@ import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
 const Measure = sequelize.define('Measure', {
-    ID_MEASURE: {
+    idMeasure: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    NAME: {
+    name: {
         type: DataTypes.STRING(50)
     }
 }, {

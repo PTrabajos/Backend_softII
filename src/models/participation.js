@@ -4,16 +4,16 @@ import User from "./user.js"
 import OrderParticipant from "./order_participant.js"
 
 const Participation = sequelize.define('Participation', {
-    ID_PARTICIPATION: {
+    idParticipation: {
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FK_ID_USER: {
+    idUser: {
         type: DataTypes.INTEGER
     },
-    FK_ID_ORDER_PARTICIPANT: {
+    idOrderParticipant: {
         type: DataTypes.INTEGER
     },
 }, {
@@ -21,11 +21,11 @@ const Participation = sequelize.define('Participation', {
 })
 
 Participation.belongsTo(User, {
-    foreignKey: 'FK_ID_USER',
+    foreignKey: 'idUser',
 })
 
 Participation.belongsTo(OrderParticipant, {
-    foreignKey: 'FK_ID_ORDER_PARTICIPANT',
+    foreignKey: 'idOrderParticipant',
 })
 
 export default Participation

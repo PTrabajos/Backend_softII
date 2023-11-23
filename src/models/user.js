@@ -3,39 +3,39 @@ import sequelize from '../config/database.js'
 import DocType from "./doc_type.js"
 
 const User = sequelize.define('User', {
-    ID_USER: {
+    idUser: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FIRST_NAME: {
+    firstName: {
         type: DataTypes.STRING
     }
     ,
-    LAST_NAME: {
+    lastName: {
         type: DataTypes.STRING
     }
     ,
-    FK_ID_DOC_TYPE: {
+    idDocType: {
         type: DataTypes.INTEGER
     }
     ,
-    NO_DOC: {
+    noDoc: {
         type: DataTypes.STRING
     },
-    TELEPHONE: {
+    telephone: {
         type: DataTypes.STRING
     },
-    EMAIL: {
+    email: {
         type: DataTypes.STRING
     }
     ,
-    PASSWORD: {
+    password: {
         type: DataTypes.STRING
     }
     ,
-    PROFILE_IMAGE: {
+    profileImage: {
         type: DataTypes.TEXT
     }
 }, {
@@ -43,7 +43,7 @@ const User = sequelize.define('User', {
 })
 
 User.belongsTo(DocType, {
-    foreignKey: 'FK_ID_DOC_TYPE',
+    foreignKey: 'idDocType',
 })
 
 export default User

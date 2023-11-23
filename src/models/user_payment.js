@@ -3,25 +3,25 @@ import sequelize from '../config/database.js'
 import User from "./user.js"
 
 const UserPayment = sequelize.define('UserPayment', {
-    ID_USER_PAYMENT: {
+    idUserPayment: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FK_ID_USER: {
+    fkIdUser: {
         type: DataTypes.INTEGER
     },
-    PAYMENT_TYPE: {
+    paymentType: {
         type: DataTypes.STRING 
     },
-    PROVIDER: {
+    provider: {
         type: DataTypes.STRING
     },
-    NU_ACCOUNT: {
+    nuAccount: {
         type: DataTypes.INTEGER
     },
-    DATE_EXPIRY:{
+    dateExpiry:{
         type: DataTypes.DATE
     }
 
@@ -30,8 +30,8 @@ const UserPayment = sequelize.define('UserPayment', {
 })
 
 UserPayment.belongsTo(User, {
-    foreignKey: 'FK_ID_USER',
-    targetId: 'ID_USER'
+    foreignKey: 'fkIdUser',
+    targetId: 'idUser'
 })
 
 export default UserPayment

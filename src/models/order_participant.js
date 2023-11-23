@@ -5,22 +5,22 @@ import User from "./user.js"
 import Product from "./product.js"
 
 const OrderParticipant = sequelize.define('OrderParticipant', {
-    ID_ORDER_PARTICIPANT: {
+    idOrderParticipant: {
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FK_ID_ORDER: {
+    idOrder: {
         type: DataTypes.INTEGER
     },
-    FK_ID_USER: {
+    idUser: {
         type: DataTypes.INTEGER
     },
-    FK_ID_PRODUCT: {
+    idProduct: {
         type: DataTypes.INTEGER
     },
-    AMMOUNT: {
+    ammount: {
         type: DataTypes.FLOAT
     },
 }, {
@@ -28,15 +28,15 @@ const OrderParticipant = sequelize.define('OrderParticipant', {
 })
 
 OrderParticipant.belongsTo(Order, {
-    foreignKey: 'FK_ID_ORDER',
+    foreignKey: 'idOrder',
 })
 
 OrderParticipant.belongsTo(User, {
-    foreignKey: 'FK_ID_USER',
+    foreignKey: 'idUser',
 })
 
 OrderParticipant.belongsTo(Product, {
-    foreignKey: 'FK_ID_PRODUCT',
+    foreignKey: 'idProduct',
 })
 
 export default OrderParticipant

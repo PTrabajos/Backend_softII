@@ -2,13 +2,13 @@ import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
 const ProblemType = sequelize.define('ProblemType', {
-    ID_PROBLEM_TYPE: {
+    idProblemType: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    NAME: {
+    name: {
         type: DataTypes.STRING(50)
     }
 }, {

@@ -3,28 +3,28 @@ import sequelize from '../config/database.js'
 import ProblemType from "./problem_type.js"
 
 const Support = sequelize.define('Support', {
-    ID_SUPPORT: {
+    idSupport: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    FIRST_NAME: {
+    firstName: {
         type: DataTypes.STRING
     }
     ,
-    LAST_NAME: {
+    lastName: {
         type: DataTypes.STRING
     }
     ,
-    FK_ID_PROBLEM_TYPE: {
+    idProblemType: {
         type: DataTypes.INTEGER
     }
     ,
-    DESCRIPTION: {
+    description: {
         type: DataTypes.STRING
     },
-    FG_PRESENTIAL: {
+    fgPresential: {
         type: DataTypes.STRING
     },
 }, {
@@ -32,7 +32,7 @@ const Support = sequelize.define('Support', {
 })
 
 Support.belongsTo(ProblemType, {
-    foreignKey: 'FK_ID_PROBLEM_TYPE',
+    foreignKey: 'idProblemType',
 })
 
 export default Support

@@ -2,19 +2,19 @@ import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
 const Product = sequelize.define('Product', {
-    ID_PRODUCT: {
+    idProduct: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    NAME: {
+    name: {
         type: DataTypes.STRING
     },
-    DESCRIPTION: {
+    description: {
         type: DataTypes.STRING
     },
-    IMAGE: {
+    image: {
         type: DataTypes.TEXT
     }
 }, {
