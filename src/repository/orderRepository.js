@@ -9,7 +9,7 @@ const findAll = async () => {
                     model: User, // Modelo que deseas unir
                     required: true, // INNER JOIN
                     as: 'User', // Alias de la relación, si lo tienes definido
-                    attributes: ['FIRST_NAME', 'LAST_NAME', 'PROFILE_IMAGE']
+                    attributes: ['firstName', 'lastName', 'profileImage']
                 }
             ],
             //raw: true,
