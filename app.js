@@ -18,6 +18,8 @@ import userRoutes from './src/routes/user.js';
 let app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json({ limit: '5mb' }));
+app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
 app.get('/', (req, res) => {
     return res.json({ result: 'OK'});

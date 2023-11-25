@@ -3,7 +3,7 @@ import sequelize from '../config/database.js'
 import User from "./user.js"
 
 const Order = sequelize.define('Order', {
-    idOrder: {
+    id: {
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true,

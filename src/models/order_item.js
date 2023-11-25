@@ -5,7 +5,7 @@ import Product from "./product.js"
 import Measure from "./measure.js"
 
 const OrderItem = sequelize.define('OrderItem', {
-    idOrderItem: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -32,17 +32,17 @@ const OrderItem = sequelize.define('OrderItem', {
 
 OrderItem.belongsTo(Order, {
     foreignKey: 'idOrder',
-    targetId: 'idOrder'
+    targetId: 'id'
 })
 
 OrderItem.belongsTo(Product, {
     foreignKey: 'idProduct',
-    targetId: 'idProduct'
+    targetId: 'id'
 })
 
 OrderItem.belongsTo(Measure, {
     foreignKey: 'idMeasure',
-    targetId: 'idMeasure'
+    targetId: 'id'
 })
 
 export default OrderItem

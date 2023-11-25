@@ -24,10 +24,10 @@ class BaseRepository {
         }
     }
 
-    findOne = async (ID_USER) => {
+    findOne = async (id) => {
         try {
             return await this.modelo.findOne({
-                where: { ID_USER }
+                where: { id }
             })
         }
         catch(err) {
@@ -35,11 +35,11 @@ class BaseRepository {
             return null;
         }
     }
-
+    /*
     update =  async(object) => {
-        const { ID_USER } = object;
+        const { id } = object;
         try {
-            const result = await this.modelo.update({ where: { ID_USER } })
+            const result = await this.modelo.update(object, { where: { id } })
     
             if (result) {
                 result.set(object)
@@ -55,7 +55,25 @@ class BaseRepository {
         }
         
     }
-
+    */
+    update = async (object) => {
+        const { id } = object;
+        try {
+            const [rowsUpdated, [updatedRecord]] = await this.modelo.update(object, {
+                where: { id },
+                returning: true, // This ensures that the updated record is returned
+            });
+    
+            if (rowsUpdated > 0) {
+                return updatedRecord;
+            } else {
+                return null; // No records were updated
+            }
+        } catch (err) {
+            console.error(err);
+            return null;
+        }
+    }
     remove = async (id) => {
         try {
             await this.modelo.destroy({

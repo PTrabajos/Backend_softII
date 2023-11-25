@@ -3,13 +3,13 @@ import sequelize from '../config/database.js'
 import User from "./user.js"
 
 const UserPayment = sequelize.define('UserPayment', {
-    idUserPayment: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    fkIdUser: {
+    idUser: {
         type: DataTypes.INTEGER
     },
     paymentType: {
@@ -30,8 +30,8 @@ const UserPayment = sequelize.define('UserPayment', {
 })
 
 UserPayment.belongsTo(User, {
-    foreignKey: 'fkIdUser',
-    targetId: 'idUser'
+    foreignKey: 'idUser',
+    targetId: 'id'
 })
 
 export default UserPayment

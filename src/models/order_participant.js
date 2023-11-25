@@ -5,7 +5,7 @@ import User from "./user.js"
 import Product from "./product.js"
 
 const OrderParticipant = sequelize.define('OrderParticipant', {
-    idOrderParticipant: {
+    id: {
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true,

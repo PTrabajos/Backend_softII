@@ -3,7 +3,7 @@ import sequelize from '../config/database.js'
 import ProblemType from "./problem_type.js"
 
 const Support = sequelize.define('Support', {
-    idSupport: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,

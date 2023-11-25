@@ -3,7 +3,7 @@ import sequelize from '../config/database.js'
 import DocType from "./doc_type.js"
 
 const User = sequelize.define('User', {
-    idUser: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,

@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
 const DocType = sequelize.define('DocType', {
-    idDocType: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
