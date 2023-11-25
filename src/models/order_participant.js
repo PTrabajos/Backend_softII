@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
-import Order from "./order.js"
+import OrderItem from "./order_item.js"
 import User from "./user.js"
 import Product from "./product.js"
 
@@ -11,7 +11,7 @@ const OrderParticipant = sequelize.define('OrderParticipant', {
         autoIncrement: true,
         allowNull: false
     },
-    idOrder: {
+    idOrderItem: {
         type: DataTypes.INTEGER
     },
     idUser: {
@@ -27,8 +27,8 @@ const OrderParticipant = sequelize.define('OrderParticipant', {
     tableName: 'ORDER_PARTICIPANT'
 })
 
-OrderParticipant.belongsTo(Order, {
-    foreignKey: 'idOrder',
+OrderParticipant.belongsTo(OrderItem, {
+    foreignKey: 'idOrderItem',
 })
 
 OrderParticipant.belongsTo(User, {
