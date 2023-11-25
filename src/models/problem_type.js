@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
-const Product = sequelize.define('Product', {
+const ProblemType = sequelize.define('ProblemType', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -9,16 +9,10 @@ const Product = sequelize.define('Product', {
         allowNull: false
     },
     name: {
-        type: DataTypes.STRING
-    },
-    description: {
-        type: DataTypes.STRING
-    },
-    image: {
-        type: DataTypes.TEXT
+        type: DataTypes.STRING(50)
     }
 }, {
-    tableName: 'PRODUCT'
+    tableName: 'PROBLEM_TYPE'
 })
 
-export default Product
+export default ProblemType

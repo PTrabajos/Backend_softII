@@ -1,6 +1,6 @@
 import express from 'express'
 
-import ControllerFactory from '../controllers/UserControllerFactory.js';
+import ControllerFactory from '../controllers/ProblemTypeControllerFactory.js';
 
 const controllerFactory = new ControllerFactory()
 const controller = controllerFactory.createController()
@@ -11,6 +11,5 @@ router.get("/", controller.findAll)
 router.post("/", controller.create)
 router.delete("/:id", controller.remove)
 router.get("/:id", controller.findOne)
-router.put('/', controller.update )
 
 export default router;

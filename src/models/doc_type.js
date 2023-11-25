@@ -1,9 +1,8 @@
-
 import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 
-const Doc = sequelize.define('doc', {
-    doc_id: {
+const DocType = sequelize.define('DocType', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -12,9 +11,8 @@ const Doc = sequelize.define('doc', {
     name: {
         type: DataTypes.STRING
     }
+}, {
+    tableName: 'DOC_TYPE'
 })
 
-
-
-
-export default Doc
+export default DocType

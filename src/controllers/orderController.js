@@ -1,27 +1,27 @@
-import Payment_detailRepository from "../repository/payment_deatilRepository.js";
+import OrderRepository from "../repository/orderRepository.js";
 
 const findAll = async (req, res) => {
-    const result = await Payment_detailRepository.findAll();
+    const result = await OrderRepository.findAll();
 
     return sendResponse(result, res);
 }
 
 const findOne = async (req, res) => {
     const id = req.params.id;
-    const result = await Payment_detailRepository.findOne(id);
+    const result = await OrderRepository.findOne(id);
 
     return sendResponse(result, res);
 }
 
 const create = async (req, res) => {
     
-    const result = await Payment_detailRepository.create(req.body);
+    const result = await OrderRepository.create(req.body);
 
     return sendResponse(result, res);
 }
 
 const update = async (req,res) => {
-    const result = await Payment_detailRepository.update(req.body)
+    const result = await OrderRepository.update(req.body)
 
     return sendResponse(result, res);
 }
@@ -30,7 +30,7 @@ const remove = async (req, res) => {
 
     const id = req.params.id;
 
-    const result = await Payment_detailRepository.remove(id)
+    const result = await OrderRepository.remove(id)
 
     return sendResponse(result, res);
 }
@@ -42,6 +42,6 @@ const sendResponse = (result, res) => {
         return res.status(500).json({ message: 'Ha ocurrido un error'})
 } 
 
-const Payment_detailController = { findAll, create, findOne, update, remove }
+const OrderController = { findAll, create, findOne, update, remove }
 
-export default Payment_detailController;
+export default OrderController;

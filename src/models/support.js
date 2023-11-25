@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
-import DocType from "./doc_type.js"
+import ProblemType from "./problem_type.js"
 
-const User = sequelize.define('User', {
+const Support = sequelize.define('Support', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -17,33 +17,22 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING
     }
     ,
-    idDocType: {
+    idProblemType: {
         type: DataTypes.INTEGER
     }
     ,
-    noDoc: {
+    description: {
         type: DataTypes.STRING
     },
-    telephone: {
+    fgPresential: {
         type: DataTypes.STRING
     },
-    email: {
-        type: DataTypes.STRING
-    }
-    ,
-    password: {
-        type: DataTypes.STRING
-    }
-    ,
-    profileImage: {
-        type: DataTypes.TEXT
-    }
 }, {
-    tableName: 'USER'
+    tableName: 'SUPPORT'
 })
 
-User.belongsTo(DocType, {
-    foreignKey: 'idDocType',
+Support.belongsTo(ProblemType, {
+    foreignKey: 'idProblemType',
 })
 
-export default User
+export default Support

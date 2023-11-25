@@ -1,14 +1,15 @@
 import express from 'express'
-import ProductController from '../controllers/productController.js';
 
-const { findAll, create, update, remove, findOne } = ProductController
+import ControllerFactory from '../controllers/ProductControllerFactory.js';
+
+const controllerFactory = new ControllerFactory()
+const controller = controllerFactory.createController()
 
 const router = express.Router()
 
-router.get("/", findAll)
-router.post("/", create)
-router.put("/", update)
-router.delete("/:id", remove)
-router.get("/:id", findOne)
+router.get("/", controller.findAll)
+router.post("/", controller.create)
+router.delete("/:id", controller.remove)
+router.get("/:id", controller.findOne)
 
 export default router;

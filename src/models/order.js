@@ -2,9 +2,9 @@ import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 import User from "./user.js"
 
-const UserPayment = sequelize.define('UserPayment', {
+const Order = sequelize.define('Order', {
     id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
@@ -12,26 +12,27 @@ const UserPayment = sequelize.define('UserPayment', {
     idUser: {
         type: DataTypes.INTEGER
     },
-    paymentType: {
-        type: DataTypes.STRING 
-    },
-    provider: {
+    title: {
         type: DataTypes.STRING
     },
-    nuAccount: {
-        type: DataTypes.INTEGER
+    description: {
+        type: DataTypes.STRING
     },
-    dateExpiry:{
+    deliveryDate: {
         type: DataTypes.DATE
+    },
+    address: {
+        type: DataTypes.STRING
+    },
+    fgState: {
+        type: DataTypes.STRING
     }
-
 }, {
-    tableName: 'USER_PAYMENT'
+    tableName: 'ORDER'
 })
 
-UserPayment.belongsTo(User, {
+Order.belongsTo(User, {
     foreignKey: 'idUser',
-    targetId: 'id'
 })
 
-export default UserPayment
+export default Order
