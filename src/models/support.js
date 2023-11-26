@@ -17,6 +17,10 @@ const Support = sequelize.define('Support', {
         type: DataTypes.STRING
     }
     ,
+    email: {
+        type: DataTypes.STRING
+    }
+    ,
     idProblemType: {
         type: DataTypes.INTEGER
     }
