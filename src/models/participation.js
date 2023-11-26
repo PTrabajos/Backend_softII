@@ -2,6 +2,7 @@ import { DataTypes } from "sequelize"
 import sequelize from '../config/database.js'
 import User from "./user.js"
 import OrderParticipant from "./order_participant.js"
+import Order from "./order.js"
 
 const Participation = sequelize.define('Participation', {
     id: {
@@ -16,6 +17,9 @@ const Participation = sequelize.define('Participation', {
     idOrderParticipant: {
         type: DataTypes.INTEGER
     },
+    idOrder: {
+        type: DataTypes.INTEGER
+    },
 }, {
     tableName: 'PARTICIPATION'
 })
@@ -27,5 +31,10 @@ Participation.belongsTo(User, {
 Participation.belongsTo(OrderParticipant, {
     foreignKey: 'idOrderParticipant',
 })
+
+Participation.belongsTo(Order, {
+    foreignKey: 'idOrder',
+})
+
 
 export default Participation
