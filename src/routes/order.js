@@ -1,13 +1,16 @@
 import express from 'express'
-import OrderController from '../controllers/orderController.js'
 
-const { findAll, create, remove, findOne } = OrderController
+import ControllerFactory from '../controllers/OrderControllerFactory.js';
+
+const controllerFactory = new ControllerFactory()
+const controller = controllerFactory.createController()
 
 const router = express.Router()
 
-router.get("/", findAll)
-router.post("/", create)
-router.delete("/:id", remove)
-router.get("/:id", findOne)
+router.get("/", controller.findAll)
+router.post("/", controller.create)
+router.delete("/:id", controller.remove)
+router.get("/:id", controller.findOne)
+router.put('/', controller.update )
 
 export default router;
